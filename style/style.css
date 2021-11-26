@@ -15,6 +15,7 @@ header {
 }
 
 footer {
+    bottom: 0;
     display: flex;
     justify-content: space-evenly;
 }
@@ -33,4 +34,10 @@ footer {
     display: flex;
     list-style: none;
     gap: 3vh;
+}
+
+
+/*----------------------Début du style de la page 'inscription'---------------------------*/
+.contenu_index {
+    text-align: center;
 }
