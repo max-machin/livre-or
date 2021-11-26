@@ -1,5 +1,6 @@
 body {
     padding: 0 0;
+    height: 100%;
 }
 
 header {
@@ -11,4 +12,25 @@ header {
     display: flex;
     justify-content: center;
     gap: 10vh;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bloc_footer_nav, .bloc_footer_media {
+    text-align: center;
+}
+
+.liste_footer_nav {
+    display: flex;
+    list-style: none;
+    gap: 3vh;
+}
+
+.liste_footer_media {
+    display: flex;
+    list-style: none;
+    gap: 3vh;
 }
