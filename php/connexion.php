@@ -1,3 +1,19 @@
+<?php
+
+require "../require/require_bdd.php";
+
+$error = "";
+
+if ( isset ( $_POST['submit'])){
+    if ( !empty ( $_POST['login'] && $_POST['password'])){
+        
+    }else{
+        $error = "Veuillez remplir tous les champs";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +39,23 @@
             </ul>
         </nav>
     </header>
+
+    <main>
+        <div class="bloc_main_connexion">
+            <form method="post" action="">
+                <label for="login"> Login <br>
+                <input type="text" name="login" placeholder="login">
+                </label><br>
+
+                <label for="password"> Password <br>
+                <input type="password" name="password" placeholder="password">
+                </label><br>
+
+                <a class="erreur"><?= $error ?></a><br>
+                <input type="submit" name="submit" value="connexion">
+            </form>
+        </div>
+    </main>
 
     <footer>
         <div class="bloc_footer_nav">

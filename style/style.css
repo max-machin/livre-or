@@ -45,3 +45,8 @@ footer {
 .erreur {
     color: red;
 }
+
+/*----------------------Début du style de la page 'connexion'----------------------------*/
+.bloc_main_connexion {
+    text-align: center;
+}
