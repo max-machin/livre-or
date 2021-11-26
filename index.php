@@ -19,7 +19,7 @@
             <ul class="liste_nav">
                 <li><a href="php/inscription.php">Inscription</a></li>
                 <li>Livre d'or</li>
-                <li>Connexion</li>
+                <li><a href="php/connexion.php">Connexion</a></li>
             </ul>
         </nav>
     </header>
@@ -38,7 +38,7 @@
             <ul class="liste_footer_nav">
                 <li><a href="php/inscription.php">Inscription</a></li>
                 <li>Livre d'or</li>
-                <li>Connexion</li>
+                <li><a href="php/connexion.php">Connexion</a></li>
             </ul>
         </div>
         <div class="bloc_footer_media">
