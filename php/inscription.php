@@ -1,3 +1,16 @@
+<?php
+
+require "../require/require_bdd.php";
+
+$error = "";
+
+if ( isset ( $_POST['submit'])){
+    if ( !empty ( $_POST['login']) && !empty ( $_POST['password']) && !empty ( $_POST['conf_password'])){
+        if ()
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +41,7 @@
     <main>
         <div class="contenu_index">
 
-            <form action="back_inscription.php" method="post">
+            <form action="" method="post">
 
                 <label for="login"> Login <br>
                 <input type="text" name="login" placeholder="login">
