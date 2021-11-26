@@ -41,3 +41,7 @@ footer {
 .contenu_index {
     text-align: center;
 }
+
+.erreur {
+    color: red;
+}

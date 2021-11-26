@@ -6,7 +6,15 @@ $error = "";
 
 if ( isset ( $_POST['submit'])){
     if ( !empty ( $_POST['login']) && !empty ( $_POST['password']) && !empty ( $_POST['conf_password'])){
-        if ()
+        if ( $_POST['password'] === $_POST['conf_password'] ){
+            $hash_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $requete = mysqli_query($conn , "INSERT INTO `utilisateurs`(`login`, `password`) VALUES ('$_POST[login]', '$hash_password')");
+            header('location: connexion.php');
+        }else{
+            $error = "Veuillez renseigner deux mot de passe indentiques";
+        }
+    }else{
+        $error = "Veuillez remplir tous les champs";
     }
 }
 
@@ -54,7 +62,8 @@ if ( isset ( $_POST['submit'])){
                 <label for="conf_password"> confirm password <br>
                 <input type="password" name="conf_password" placeholder="confirm your password">
                 </label><br>
-
+                <a class="erreur"><?= $error ?></a>
+                <br>
                 <input type="submit" name="submit" value="S'inscrire">
             </form>
 
