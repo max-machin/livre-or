@@ -1,3 +1,68 @@
+<?php
+
+session_start();
+
+require "../require/require_bdd.php";
+
+$error = "";
+$echo = "";
+
+$display1 = "block";
+$display2 = "none";
+
+//Rajouter la vérification que le login n'existe pas déjà en bdd
+
+if ( isset ( $_POST['sub_login']))
+{
+    $requete_profil1 = mysqli_query ( $conn, " SELECT * FROM `utilisateurs` WHERE `login` = '$_SESSION[login]'");
+    $result_profil1 = mysqli_fetch_array($requete_profil1);
+
+    if ( $_POST['login'] != $result_profil1['login'])
+    {
+        $login = $_POST['login'];
+        $requete_profil2 = mysqli_query ( $conn, "UPDATE `utilisateurs` SET `login`='$login' WHERE `login` = '$result_profil1[login]'");
+        $_SESSION['login'] = $login;
+        $echo = "Login modifié avec succés";
+    }  
+    else
+    {
+        $error = "Veuillez insérer un login différent de votre ancien";
+    }
+}
+
+
+if ( isset ( $_POST['sub_oldpassword'])) 
+{
+    
+        $requete_profil2 = mysqli_query ( $conn, " SELECT * FROM `utilisateurs` WHERE `login` = '$_SESSION[login]'");
+        $result_profil2 = mysqli_fetch_assoc($requete_profil2);
+        if ( password_verify($_POST['old_password'],$result_profil2['password']))
+        {
+            $echo = "Password correct";
+            $display1 = "none";
+            $display2 = "block";
+        }
+        else
+        {
+        $error = "Ancien password incorrect";
+        }
+    
+}
+
+$error2 = "";
+
+if ( isset ( $_POST['sub_newpassword'])){
+    if ( $_POST['password'] == $_POST['password_conf']){
+        echo "nice";
+    }else{
+        $error2 = "Entrez 2 password identiques";
+        $display1 = "none";
+        $display2 = "block";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,20 +93,39 @@
     <main>
         <div class="bloc_main_profil">
             <h3>Modifier vos informations</h3>
-            <form>
+            <form method="post" action="">
                 <label for="login"> Login <br>
-                <input type="text" name="login" placeholder="Login">
+                    <input type="text" name="login" placeholder="<?= $_SESSION['login'] ?>">
+                    <input type="submit" name="sub_login" value="✎">
                 </label><br>
-
-                <label for="login"> Password <br>
-                <input type="password" name="password" placeholder="Password">
-                </label><br>
-
-                <label for="login"> Confirmer password <br>
-                <input type="password" name="password_conf" placeholder="Confirmez votre password">
-                </label><br>
-
+                <a class="erreur"><?= $error ?></a>
+                
+                <a class="echo"><?= $echo ?></a>
             </form>
+            <?php
+
+            
+            ?>
+            <form method="post" action="" style="display: <?= $display1 ?>;">
+                <label for="password"> Ancien password <br>
+                    <input type="password" name="old_password" placeholder="Votre ancien password">
+                    <input type="submit" name="sub_oldpassword" value="✎">
+                </label><br>
+            </form>
+            <form method="post" action="" style="display: <?= $display2 ?>;">
+                <label for="new_password">Nouveau password <br>
+                    <input type="password" name="password" placeholder="Password">
+                </label><br>
+
+                <label for="new_password_conf"> Confirmer nouveau password <br>
+                    <input type="password" name="password_conf" placeholder="Confirmez votre password">
+                    <br>
+                </label>
+                <a class="erreur"><?= $error2 ?></a>
+                <br>
+                <input type="submit" name="sub_newpassword" value="Modifier">
+            </form>
+            
         </div>
     </main>
 
