@@ -27,7 +27,7 @@ if (isset($_POST['submit']))
             {
                 //On définie nos variables de session qui recupérent les valeurs de notre formulaire ainsi que de l'id concerné pour l'affichage
                 $_SESSION['id'] = $result_log['id'];
-                $_SESSION['login'] = htmlspecialchars( $_POST['login'] );
+                $_SESSION['login'] = $result_log['login'];
                 $_SESSION['password'] = htmlspecialchars( $_POST['password'] );
 
                 //Puis on redirige l'utilisateur vers la page d'index en mode connecté
