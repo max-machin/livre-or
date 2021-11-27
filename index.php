@@ -22,13 +22,15 @@ session_start();
     <!-- 2 : Si $_SESSION['login'] est définie et qu'il est différent d'admin alors l'user est considéré comme connecté. -->
     <?php if (isset($_SESSION['id']) && $_SESSION['login'] != 'admin') { ?>
         <header>
-            <h1 class="titre_index">Livre d'or</h1>
+            <h1 class="titre_index">Bonjour</h1>
             <h2 class="sous_titre_index">Bienvenue <?= $_SESSION['login'] ?></h2>
             <nav>
                 <ul class="liste_nav">
-                    <li><a href="php/inscription.php">Profil</a></li>
+                    <li><a href="php/profil.php">Profil</a></li>
                     <li>Livre d'or</li>
-                    <li><a href="php/connexion.php">Déconnexion</a></li>
+                    <form method="post" action="require/deconnexion.php">
+                        <input type="submit" name="deconnexion" value="Deconnexion">
+                    </form>
                 </ul>
             </nav>
         </header>
@@ -57,14 +59,18 @@ session_start();
         </div>
 
     </main>
+
+    <!-- 2 : Affichage footer en mode 'connecté' -->
     <?php if (isset($_SESSION['id']) && $_SESSION['login'] != 'admin') { ?>
         <footer>
             <div class="bloc_footer_nav">
                 <h4 class="titre_footer_nav">Navigation</h4>
                 <ul class="liste_footer_nav">
-                    <li><a href="php/inscription.php">Profil</a></li>
+                    <li><a href="php/profil.php">Profil</a></li>
                     <li>Livre d'or</li>
-                    <li><a href="php/connexion.php">Déconnexion</a></li>
+                    <form method="post" action="require/deconnexion.php">
+                        <input type="submit" name="deconnexion" value="Deconnexion">
+                    </form>
                 </ul>
             </div>
             <div class="bloc_footer_media">
@@ -78,8 +84,10 @@ session_start();
                 </ul>
             </div>
         </footer>
+    <!-- 2 : Fin d'affichage footer mode 'connecté' -->
     <?php } ?>
 
+    <!-- 3 : Affichage du footer en mode 'déconnecté' -->
     <?php if (!isset($_SESSION['id'])) { ?>
         <footer>
             <div class="bloc_footer_nav">
@@ -101,6 +109,7 @@ session_start();
                 </ul>
             </div>
         </footer>
+    <!-- 3 : Fin de l'affichage du footer en mode 'déconnecté' -->
     <?php } ?>
 </body>
 

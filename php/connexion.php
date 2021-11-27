@@ -65,7 +65,7 @@ if (isset($_POST['submit']))
     <script src="https://kit.fontawesome.com/81dc42ea59.js" crossorigin="anonymous"></script>
     <link href="image/fontawesome-free-5.15.4-web.zip/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="../style/style.css">
-    <title>Livre d'or</title>
+    <title>Connexion</title>
 </head>
 
 <body>
