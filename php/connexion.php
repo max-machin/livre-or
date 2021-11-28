@@ -66,9 +66,9 @@ if ( isset( $_POST['submit'] ) ) {
         <h2 class="sous_titre_index">Connexion</h2>
         <nav>
             <ul class="liste_nav">
+                <li><a href="../index.php">Accueil</a></li>
+                <li><a href="livre-or.php">Livre d'or</a></li>
                 <li><a href="inscription.php">Inscription</a></li>
-                <li>Livre d'or</li>
-                <li><a href="connexion.php">Connexion</a></li>
             </ul>
         </nav>
     </header>
@@ -94,9 +94,9 @@ if ( isset( $_POST['submit'] ) ) {
         <div class="bloc_footer_nav">
             <h4 class="titre_footer_nav">Navigation</h4>
             <ul class="liste_footer_nav">
+                <li><a href="../index.php">Accueil</a></li>
+                <li><a href="livre-or.php">Livre d'or</a></li>
                 <li><a href="inscription.php">Inscription</a></li>
-                <li>Livre d'or</li>
-                <li><a href="connexion.php">Connexion</a></li>
             </ul>
         </div>
         <div class="bloc_footer_media">
