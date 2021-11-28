@@ -1,8 +1,14 @@
 <?php
 
+require "../require/require_bdd.php";
+
 session_start();
 
-echo ;
+$error = "";
+
+if ( isset ($_POST['sub_commentaire'])){
+        $req = mysqli_query($conn, "INSERT INTO `commentaires`(`id`, `commentaire`, `id_utilisateur`, `date`) VALUES (NULL,'". htmlspecialchars($_POST['commentaire']) ."', '". $_SESSION['id'] ."', '". date("Y-m-d H:i:s")."')");
+}
 
 ?>
 <!DOCTYPE html>
@@ -33,6 +39,18 @@ echo ;
             </ul>
         </nav>
     </header>
+    <main>
+        <div class="bloc_main_commentaire">
+            <form action="" method="post">
+                <label for="lab_commentaire"> Votre commentaire <br>
+                    <textarea placeholder="Entrez votre commentaire" name="commentaire" rows="9" cols="70" maxlength="500" minlength="20"></textarea><br>
+                    
+                    <input type="submit" name="sub_commentaire" value="Envoyer">
+                </label>
+            </form>
+        </div>
+    </main>
+
     <footer>
         <div class="bloc_footer_nav">
             <h4 class="titre_footer_nav">Navigation</h4>

@@ -60,3 +60,9 @@ footer {
 .echo {
     color: rgb(5, 192, 5);
 }
+
+/*----------------------Début du style de la page 'commentaire'-------------------------------*/
+
+.bloc_main_commentaire {
+    text-align: center;
+}

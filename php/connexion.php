@@ -15,7 +15,7 @@ if ( isset( $_POST['submit'] ) ) {
         $login = htmlspecialchars($_POST['login']);
 
         //On effectue requête pour récupérer nos éléments de comparaison en base de données
-        $requete_conn = mysqli_query ( $conn, "SELECT * FROM `utilisateurs` WHERE `login` = '$_POST[login]'");
+        $requete_conn = mysqli_query ( $conn, "SELECT * FROM `utilisateurs` WHERE `login` = '". htmlspecialchars($_POST['login']). "' ");
         $result_log = mysqli_fetch_assoc ( $requete_conn);
         //Si le login entré dans le formulaire correspond à celui connu en base de données alors on procéde à la vérification suivante
         if  ($login == $result_log['login'] ) {

@@ -9,7 +9,7 @@ if ( isset ( $_POST['submit'])){
     if ( !empty ( $_POST['login']) && !empty ( $_POST['password']) && !empty ( $_POST['conf_password'])){
 
         if ( $_POST['password'] === $_POST['conf_password'] ){
-            $requete_log = mysqli_query($conn, "SELECT COUNT(*) FROM `utilisateurs` WHERE `login` = '$_POST[login]' ");
+            $requete_log = mysqli_query($conn, "SELECT COUNT(*) FROM `utilisateurs` WHERE `login` = '". htmlspecialchars($_POST['login']) ."' ");
             $result_log = mysqli_fetch_array($requete_log);
 
             if( $result_log['COUNT(*)'] == 1){
@@ -18,7 +18,7 @@ if ( isset ( $_POST['submit'])){
            
             else{
                 $hash_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-                $requete = mysqli_query($conn, "INSERT INTO `utilisateurs`(`login`, `password`) VALUES ('$_POST[login]', '$hash_password')");
+                $requete = mysqli_query($conn, "INSERT INTO `utilisateurs`(`login`, `password`) VALUES ('". htmlspecialchars($_POST['login']) ."', '$hash_password')");
                 header('location: connexion.php');
             }
 
