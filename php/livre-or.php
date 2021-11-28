@@ -2,8 +2,14 @@
 
 session_start();
 
+require "../require/require_bdd.php";
 
+$requete_affichage_comm = mysqli_query ( $conn , "SELECT * FROM `commentaires` INNER JOIN `utilisateurs` ON commentaires.id_utilisateur = utilisateurs.id ORDER BY `date` DESC");
+$result_affichage = mysqli_fetch_all($requete_affichage_comm, MYSQLI_ASSOC);
 
+$requete_affichage_date = mysqli_query ( $conn , "SELECT DATE_FORMAT(`date`, '%d/%m/%Y') AS datefr, DATE_FORMAT(`date`, '%H:%i:%s') FROM `commentaires` ORDER BY `date`DESC");
+$result_date = mysqli_fetch_array($requete_affichage_date);
+var_dump($result_date);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,11 +60,14 @@ session_start();
 
     <main>
         <table class="livre_or_table">
-            <thead>
                 <tr>
-                    <th></th>
+                    <?php foreach($result_affichage as $result){
+                        echo "<tr><td>" ."$result[commentaire]" . "</td></tr>";
+                        echo "<tr><td> posté par " ."$result[login]" . "</td>";
+                        echo "<td> le " ."$result_date[0]" ." à " ."$result_date[1]" . "</td></tr>";
+                    } 
+                    ?>
                 </tr>
-            </thead>
         </table>
     </main>
 
