@@ -18,19 +18,24 @@ if ( isset ( $_POST['sub_login'] ) ) {
         $result_profil1 = mysqli_fetch_array($requete_profil1);
 
         if ( $_POST['login'] != $result_profil1['login'] ) {
+
             $requete_log_profil = mysqli_query($conn, "SELECT COUNT(*) FROM `utilisateurs` WHERE `login` = '$_POST[login]' ");
             $result_log_profil = mysqli_fetch_array($requete_log_profil);
+
             if ( $result_log_profil['COUNT(*)'] == 0) {
-                $login = $_POST['login'];
+                $login = htmlspecialchars($_POST['login']);
                 $requete_profil2 = mysqli_query($conn, "UPDATE `utilisateurs` SET `login`='$login' WHERE `login` = '$result_profil1[login]'");
-                $_SESSION['login'] = $login;
+                $_SESSION['login'] = htmlspecialchars($login);
                 $echo = "Login modifié avec succés";
+
             } else {
                 $error = "Le login est déjà utilisé";
             }
+
         } else {
             $error = "Veuillez insérer un login différent de votre ancien";
         }
+
     } else {
         $error = "Veuillez remplir le champ login";
     }
