@@ -28,6 +28,7 @@ session_start();
                 <ul class="liste_nav">
                     <li><a href="php/profil.php">Profil</a></li>
                     <li><a href="php/livre-or.php">Livre d'or</a></li>
+                    <li><a href="php/commentaire.php">Commentaire</a></li>
                     <form method="post" action="require/deconnexion.php">
                         <input type="submit" name="deconnexion" value="Deconnexion">
                     </form>
@@ -68,6 +69,7 @@ session_start();
                 <ul class="liste_footer_nav">
                     <li><a href="php/profil.php">Profil</a></li>
                     <li><a href="php/livre-or.php">Livre d'or</a></li>
+                    <li><a href="php/commentaire.php">Commentaire</a></li>
                     <form method="post" action="require/deconnexion.php">
                         <input type="submit" name="deconnexion" value="Deconnexion">
                     </form>

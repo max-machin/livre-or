@@ -111,6 +111,7 @@ if ( isset ( $_POST['sub_newpassword'] ) ) {
             <ul class="liste_nav">
                 <li><a href="../index.php">Accueil</a></li>
                 <li><a href="livre-or.php">Livre d'or</a></li>
+                <li><a href="commentaire.php">Commentaire</a></li>
                 <form method="post" action="../require/deconnexion.php">
                     <input type="submit" name="deconnexion" value="Deconnexion">
                 </form>
@@ -165,6 +166,7 @@ if ( isset ( $_POST['sub_newpassword'] ) ) {
             <ul class="liste_footer_nav">
                 <li><a href="../index.php">Accueil</a></li>
                 <li><a href="livre-or.php">Livre d'or</a></li>
+                <li><a href="commentaire.php">Commentaire</a></li>
                 <form method="post" action="../require/deconnexion.php">
                     <input type="submit" name="deconnexion" value="Deconnexion">
                 </form>
