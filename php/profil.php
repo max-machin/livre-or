@@ -10,19 +10,29 @@ $echo = "";
 $display1 = "block";
 $display2 = "none";
 
-//Rajouter la vérification que le login n'existe pas déjà en bdd
-
+//Si le formulaire est envoyé
 if ( isset ( $_POST['sub_login']))
 {
-    $requete_profil1 = mysqli_query ( $conn, " SELECT * FROM `utilisateurs` WHERE `login` = '$_SESSION[login]'");
+    //On récupére les informations du l'utilisateurs ou l'id est correspondant à celui récupérer en session
+    $requete_profil1 = mysqli_query ( $conn, " SELECT * FROM `utilisateurs` WHERE `id` = '$_SESSION[id]'");
     $result_profil1 = mysqli_fetch_array($requete_profil1);
 
     if ( $_POST['login'] != $result_profil1['login'])
     {
-        $login = $_POST['login'];
-        $requete_profil2 = mysqli_query ( $conn, "UPDATE `utilisateurs` SET `login`='$login' WHERE `login` = '$result_profil1[login]'");
-        $_SESSION['login'] = $login;
-        $echo = "Login modifié avec succés";
+        $requete_log_profil = mysqli_query ( $conn, "SELECT COUNT(*) FROM `utilisateurs` WHERE `login` = '$_POST[login]' ");
+        $result_log_profil = mysqli_fetch_array($requete_log_profil);
+        if ( $result_log_profil['COUNT(*)'] == 0)
+        {
+            $login = $_POST['login'];
+            $requete_profil2 = mysqli_query($conn, "UPDATE `utilisateurs` SET `login`='$login' WHERE `login` = '$result_profil1[login]'");
+            $_SESSION['login'] = $login;
+            $echo = "Login modifié avec succés";
+        }
+        else 
+        {
+            $error = "Le login est déjà utilisé";
+        }
+        
     }  
     else
     {
@@ -31,35 +41,35 @@ if ( isset ( $_POST['sub_login']))
 }
 
 
-if ( isset ( $_POST['sub_oldpassword'])) 
-{
+// if ( isset ( $_POST['sub_oldpassword'])) 
+// {
     
-        $requete_profil2 = mysqli_query ( $conn, " SELECT * FROM `utilisateurs` WHERE `login` = '$_SESSION[login]'");
-        $result_profil2 = mysqli_fetch_assoc($requete_profil2);
-        if ( password_verify($_POST['old_password'],$result_profil2['password']))
-        {
-            $echo = "Password correct";
-            $display1 = "none";
-            $display2 = "block";
-        }
-        else
-        {
-        $error = "Ancien password incorrect";
-        }
+//         $requete_profil2 = mysqli_query ( $conn, " SELECT * FROM `utilisateurs` WHERE `login` = '$_SESSION[login]'");
+//         $result_profil2 = mysqli_fetch_assoc($requete_profil2);
+//         if ( password_verify($_POST['old_password'],$result_profil2['password']))
+//         {
+//             $echo = "Password correct";
+//             $display1 = "none";
+//             $display2 = "block";
+//         }
+//         else
+//         {
+//         $error = "Ancien password incorrect";
+//         }
     
-}
+// }
 
-$error2 = "";
+// $error2 = "";
 
-if ( isset ( $_POST['sub_newpassword'])){
-    if ( $_POST['password'] == $_POST['password_conf']){
-        echo "nice";
-    }else{
-        $error2 = "Entrez 2 password identiques";
-        $display1 = "none";
-        $display2 = "block";
-    }
-}
+// if ( isset ( $_POST['sub_newpassword'])){
+//     if ( $_POST['password'] == $_POST['password_conf']){
+//         echo "nice";
+//     }else{
+//         $error2 = "Entrez 2 password identiques";
+//         $display1 = "none";
+//         $display2 = "block";
+//     }
+// }
 
 ?>
 
