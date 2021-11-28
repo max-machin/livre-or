@@ -26,7 +26,7 @@ session_start();
             <h2 class="sous_titre_index">Bienvenue <?= $_SESSION['login'] ?></h2>
             <nav>
                 <ul class="liste_nav">
-                    <li><a href="php/profil.php">Profil</a></li>
+                    <li><a href="php/profil.php">Mon profil</a></li>
                     <li><a href="php/livre-or.php">Livre d'or</a></li>
                     <li><a href="php/commentaire.php">Commentaire</a></li>
                     <form method="post" action="require/deconnexion.php">
@@ -67,7 +67,7 @@ session_start();
             <div class="bloc_footer_nav">
                 <h4 class="titre_footer_nav">Navigation</h4>
                 <ul class="liste_footer_nav">
-                    <li><a href="php/profil.php">Profil</a></li>
+                    <li><a href="php/profil.php">Mon profil</a></li>
                     <li><a href="php/livre-or.php">Livre d'or</a></li>
                     <li><a href="php/commentaire.php">Commentaire</a></li>
                     <form method="post" action="require/deconnexion.php">

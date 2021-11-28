@@ -12,7 +12,7 @@ if ( isset( $_POST['submit'] ) ) {
     //Si le login ainsi que le password sont bien remplis
     if ( !empty ( $_POST['login'] && $_POST['password'] ) ) {
 
-        $login = $_POST['login'];
+        $login = htmlspecialchars($_POST['login']);
 
         //On effectue requête pour récupérer nos éléments de comparaison en base de données
         $requete_conn = mysqli_query ( $conn, "SELECT * FROM `utilisateurs` WHERE `login` = '$_POST[login]'");
