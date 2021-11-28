@@ -9,7 +9,7 @@ $echo = "";
 
 if ( isset ($_POST['sub_commentaire'])){
     if ( !empty ($_POST['commentaire'])){
-        $req = mysqli_query($conn, "INSERT INTO `commentaires`(`id`, `commentaire`, `id_utilisateur`, `date`) VALUES (NULL,'". htmlspecialchars($_POST['commentaire']) ."', '". $_SESSION['id'] ."', '". date("Y-m-d H:i:s")."')");
+        $req = mysqli_query($conn, "INSERT INTO `commentaires`(`id`, `commentaire`, `id_utilisateur`, `date`) VALUES (NULL,'". $_POST['commentaire'] ."', '". $_SESSION['id'] ."', '". date("Y-m-d H:i:s")."')");
         $echo = "Votre commentaire a été posté avec succés";
     } else {
         $error = "Impossible d'envoyer un commentaire vide";
