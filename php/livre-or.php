@@ -4,11 +4,10 @@ session_start();
 
 require "../require/require_bdd.php";
 
-$requete_affichage_comm = mysqli_query ( $conn , "SELECT * FROM `commentaires` INNER JOIN `utilisateurs` ON commentaires.id_utilisateur = utilisateurs.id ORDER BY `date` DESC");
-$result_affichage = mysqli_fetch_all($requete_affichage_comm, MYSQLI_ASSOC);
 
-$requete_affichage_date = mysqli_query ( $conn , "SELECT DATE_FORMAT(`date`, '%d/%m/%Y') AS datefr, DATE_FORMAT(`date`, '%H:%i:%s') FROM `commentaires` ORDER BY `date`DESC");
-$result_date = mysqli_fetch_array($requete_affichage_date);
+$requete_affichage_comm1 = mysqli_query ( $conn , "SELECT login,commentaire, DATE_FORMAT(date, '%d/%m/%Y') AS 'datefr' , DATE_FORMAT(date, '%H:%i:%s') AS 'heurefr' FROM `commentaires` INNER JOIN `utilisateurs` ON commentaires.id_utilisateur = utilisateurs.id ORDER BY `date` DESC");
+$result_affichage = mysqli_fetch_all($requete_affichage_comm1, MYSQLI_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,18 +55,54 @@ $result_date = mysqli_fetch_array($requete_affichage_date);
     </header>
     <!-- 3 : Fin de l'affichage du header  -->
     <?php } ?>
-
+    
     <main>
-        <table class="livre_or_table">
-                <tr>
-                    <?php foreach($result_affichage as $result){
-                        echo "<tr><th> posté par " ."$result[login]" ." le " ."$result_date[0]" ." à " ."$result_date[1]" . "</th>"
-                        ."<td>" . "$result[commentaire]"
-                        ."</tr>";
+        <div class="box_form">
+            <form name="form_desc" method="post" action="">
+                Filtrez les commentaires :
+                <input type="submit" name="desc" value="Nouveaux">
+                <input type="submit" name="asc" value="Anciens">
+
+            </form>
+        </div>
+                <?php
+
+                if (isset($_POST['desc'])){
+                    foreach($result_affichage as $result){
+                ?>
+                        <div class="comm_livre">
+                            <p class="login_comm">Posté par : <?= $result['login']?></p>
+                            <i class="date_comm">Le <?= $result['datefr']?> à <?= $result['heurefr'] ?></i>
+                            <p class="comm"><?= $result['commentaire'] ?></p>
+                        </div>
+                <?php
                     } 
-                    ?>
-                </tr>
-        </table>
+                }
+                if (isset ($_POST['asc'])){
+                    $requete_affichage_asc = mysqli_query($conn , "SELECT login,commentaire, DATE_FORMAT(date, '%d/%m/%Y') AS 'datefr' , DATE_FORMAT(date, '%H:%i:%s') AS 'heurefr' FROM `commentaires` INNER JOIN `utilisateurs` ON commentaires.id_utilisateur = utilisateurs.id ORDER BY `date` ASC");
+                    $result_affichage_asc = mysqli_fetch_all($requete_affichage_asc, MYSQLI_ASSOC);
+                    foreach($result_affichage_asc as $res){
+                ?>
+                        <div class="comm_livre">
+                            <p class="login_comm">Posté par : <?= $res['login'] ?></p>
+                            <i class="date_comm">Le <?= $res['datefr']?> à <?= $res['heurefr'] ?></i>
+                            <p class="comm"><?= $res['commentaire'] ?></p>
+                        </div>
+
+                <?php
+                }
+                } else {
+                    foreach($result_affichage as $result){
+                        ?>
+                                <div class="comm_livre">
+                                    <p class="login_comm">Posté par : <?= $result['login']?></p>
+                                    <i class="date_comm">Le <?= $result['datefr']?> à <?= $result['heurefr'] ?></i>
+                                    <p class="comm"><?= $result['commentaire'] ?></p>
+                                </div>
+                        <?php
+                            } 
+                }
+                ?>
     </main>
 
 

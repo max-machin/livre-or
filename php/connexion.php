@@ -17,10 +17,13 @@ if ( isset( $_POST['submit'] ) ) {
         //On effectue requête pour récupérer nos éléments de comparaison en base de données
         $requete_conn = mysqli_query ( $conn, "SELECT * FROM `utilisateurs` WHERE `login` = '". htmlspecialchars($_POST['login']). "' ");
         $result_log = mysqli_fetch_assoc ( $requete_conn);
+
         //Si le login entré dans le formulaire correspond à celui connu en base de données alors on procéde à la vérification suivante
         if  ($login == $result_log['login'] ) {
+
             //On déhache le password afin de pouvoir le comparer à celui rentrer dans le form, si ce dernier est correct alors on connecte l'utilisateur
             if ( password_verify ( $_POST['password'], $result_log['password'] ) ) {
+                
                 //On définie nos variables de session qui recupérent les valeurs de notre formulaire ainsi que de l'id concerné pour l'affichage
                 $_SESSION['id'] = $result_log['id'];
                 $_SESSION['login'] = $result_log['login'];

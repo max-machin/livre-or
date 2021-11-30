@@ -68,30 +68,13 @@ footer {
 }
 
 /*----------------------Début du style de la page 'livre-or'-------------------------------*/
-.livre_or_table {
-    
-    margin: auto;
+
+.comm_livre {
     text-align: center;
-    line-height: 5vh;
-    border-spacing: 5vh 4vh;
+    margin-bottom: 2%;
 }
 
-.livre_or_table th {
-    border-bottom: 3px solid rgb(153, 153, 153);
-    border-width: 2px 2px ;
-    border-radius: 80px 20px;
-    padding: 2vh;
-    
+.box_form {
+    text-align: center;
 }
 
-.livre_or_table td{
-    width: 70%;
-    border-collapse: separate;
-    border: 3px solid rgb(7, 7, 7);
-    border-style: dashed double inset;
-    
-}
-
-.livre_or_table tr:nth-child(even){
-    background-color: rgb(207, 207, 207);
-}

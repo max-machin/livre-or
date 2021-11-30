@@ -12,6 +12,8 @@ $display2 = "none";
 
 //Si le formulaire est envoyé
 if ( isset ( $_POST['sub_login'] ) ) {
+
+    //Si le login est bien rempli
     if ( !empty ( $_POST['login'])){
         //On récupére les informations du l'utilisateurs ou l'id est correspondant à celui récupérer en session
         $requete_profil1 = mysqli_query($conn, " SELECT * FROM `utilisateurs` WHERE `id` = '$_SESSION[id]'");
