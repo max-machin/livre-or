@@ -8,6 +8,7 @@ require "../require/require_bdd.php";
 $requete_affichage_comm1 = mysqli_query ( $conn , "SELECT login,commentaire, DATE_FORMAT(date, '%d/%m/%Y') AS 'datefr' , DATE_FORMAT(date, '%H:%i:%s') AS 'heurefr' FROM `commentaires` INNER JOIN `utilisateurs` ON commentaires.id_utilisateur = utilisateurs.id ORDER BY `date` DESC");
 $result_affichage = mysqli_fetch_all($requete_affichage_comm1, MYSQLI_ASSOC);
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

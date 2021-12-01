@@ -1,17 +1,97 @@
 body {
     padding: 0 0;
-    height: 100%;
+    margin: 0;
+    background: white;
 }
 
 header {
+    padding: 1px;
     text-align: center;
+    background: #101820FF;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.titre_index {
+    font-family: "Spartan";
+    color: #F2AA4CFF;
+    font-size: 5vh;
+}
+
+.sous_titre_index {
+    margin-top: -3vh;
+    font-family: "Zen Kaku Gothic New Light";
+    color: white;
+    padding-bottom: 1vh;
+}
+
+nav {
+    background: #F2AA4CFF;
 }
 
 .liste_nav {
     list-style: none;
+    color: white;
     display: flex;
     justify-content: center;
-    gap: 10vh;
+    gap: 15vh;
+}
+
+.liste_nav li {
+    background: #101820FF;
+    padding: 1vh 4vh;
+}
+
+.liste_nav a {     
+    text-decoration: none;
+    font-family: "Zen Kaku Gothic New Light" ;
+    font-size: 17px;
+    padding: 1vh 2vh;
+    color: white;
+    border: 1px solid rgb(138, 138, 138);
+}
+
+.liste_nav a:hover {
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+}
+
+.contenu_index {
+    display: flex;
+    justify-content: space-around;
+}
+
+.titre_contenu_index {
+    font-family: "Zen Kaku Gothic New Light";
+    font-size: 25px;
+}
+
+.cont_comm {
+
+}
+
+.index_comm:nth-child(even){
+    background-color: grey;
+}
+
+.index_comm {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+   
+    margin-right: 5vh;
+}
+
+
+@keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+  
+  to {
+    -webkit-mask-position: -50%;
+  }
+    
 }
 
 footer {
@@ -38,9 +118,6 @@ footer {
 
 
 /*----------------------Début du style de la page 'inscription'---------------------------*/
-.contenu_index {
-    text-align: center;
-}
 
 .erreur {
     color: red;
