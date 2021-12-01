@@ -1,7 +1,7 @@
 body {
     padding: 0 0;
     margin: 0;
-    background: white;
+    background-image: white;
 }
 
 header {
@@ -14,12 +14,12 @@ header {
 .titre_index {
     font-family: "Spartan";
     color: #F2AA4CFF;
-    font-size: 5vh;
+    font-size: 6vh;
 }
 
 .sous_titre_index {
     margin-top: -3vh;
-    font-family: "Zen Kaku Gothic New Light";
+    font-family: "Oxygen";
     color: white;
     padding-bottom: 1vh;
 }
@@ -55,46 +55,98 @@ nav {
   -webkit-mask-size: 200%;
   animation: shine 2s infinite;
 }
+@keyframes shine {
+    from {
+      -webkit-mask-position: 150%;
+    }
+    
+    to {
+      -webkit-mask-position: -50%;
+    }
+      
+  }
 
 .contenu_index {
     display: flex;
     justify-content: space-around;
 }
 
-.titre_contenu_index {
-    font-family: "Zen Kaku Gothic New Light";
-    font-size: 25px;
+.sous_contenu_index {
+    margin-top: 5vh;
 }
 
-.cont_comm {
+.titre_contenu_index {
+    font-family: "Oxygen";
+    font-size: 4vh;
+    margin-top: 7vh;
+}
 
+.sous_titre_contenu_index {
+    font-family: "Zen Kaku Gothic New Light";
+    color: rgb(158, 158, 158);
+    font-size: 20px;
+}
+
+.href_livre {
+    font-weight: bold;
+    color: #F2AA4CFF;
+    text-decoration: none;
+    background: linear-gradient(to top, #F2AA4CFF 0%, #F2AA4CFF 10%, transparent 10.01%) no-repeat left bottom/ 0 100%;
+    background-size: 0 100%;
+    transition: background-size .5s;
+}
+
+.href_livre:hover{
+    transition: .5s ease-out;
+    color: gray;
+    background-size: 100% 100%;
+}
+
+
+.cont_comm {
+    margin-top: 5vh;
+    width: 40%;
 }
 
 .index_comm:nth-child(even){
-    background-color: grey;
+    background-color: black;
+    color: white;
 }
 
 .index_comm {
     display: block;
     flex-direction: column;
     text-align: center;
-   
     margin-right: 5vh;
+    margin-left: 5vh;
 }
 
+.login_comm {
+    font-family: "Oxygen";
+    padding-top: 2vh;
+}
 
-@keyframes shine {
-  from {
-    -webkit-mask-position: 150%;
-  }
-  
-  to {
-    -webkit-mask-position: -50%;
-  }
-    
+.login_comm a {
+    color: #F2AA4CFF;
+    font-weight: bold;
+}
+
+.date_comm {
+    margin-top: -2%;
+    font-size: 13px;
+    font-family: "Oxygen";
+    font-style: italic;
+}
+
+.comm {
+    font-family: "spartan";
+    font-weight: bold;
+    padding-top: 1vh;
+    padding-bottom: 2vh;
 }
 
 footer {
+    background-color: #F2AA4CFF;
     bottom: 0;
     display: flex;
     justify-content: space-evenly;

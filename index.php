@@ -10,12 +10,15 @@ require "require/require_bdd.php";
 <html lang="en">
 
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/81dc42ea59.js" crossorigin="anonymous"></script>
     <link href="image/fontawesome-free-5.15.4-web.zip/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap');</style>
+    
     <title>Livre d'or</title>
 </head>
 
@@ -58,25 +61,31 @@ require "require/require_bdd.php";
 
     <main>
         <div class="contenu_index">
-            <h3 class="titre_contenu_index">Laissez nous une trace de votre imagination ...</h3>    
-                <div class="cont_comm">
-            <?php
-                $comm = 4;
-
-                $requete_comm = mysqli_query($conn, "SELECT `login`,commentaire, DATE_FORMAT(date, '%d/%m/%Y') AS 'datefr' , DATE_FORMAT(date, '%H:%i:%s') AS 'heurefr' FROM `commentaires` INNER JOIN `utilisateurs` ON commentaires.id_utilisateur = utilisateurs.id ORDER BY rand() LIMIT $comm");
-                while ($row_comm = mysqli_fetch_array($requete_comm,MYSQLI_ASSOC)){
-            ?>
-            
-            <div class="index_comm">
-                <p class="login_comm">Posté par : <?= $row_comm['login'] ?> </p>
-                <p class="date_comm">Le <?= $row_comm['datefr']?> à <?= $row_comm['heurefr'] ?></p>
-                <p class="comm"><?= $row_comm['commentaire'] ?></p>
+            <div class="sous_contenu_index">
+                <h3 class="titre_contenu_index">Laissez nous une trace de votre imagination ...</h3>    
+                <p class="sous_titre_contenu_index">Une fois inscrit sur notre site, vous pourrez nous laisser un commentaire    
+                </br> dans le <a class="href_livre" href="php/livre-or.php"> livre d'or</a>.
+                </p>
             </div>
+
+            <div class="cont_comm">
+                <?php
+                    $comm = 4;
+
+                    $requete_comm = mysqli_query($conn, "SELECT `login`,commentaire, DATE_FORMAT(date, '%d/%m/%Y') AS 'datefr' , DATE_FORMAT(date, '%H:%i:%s') AS 'heurefr' FROM `commentaires` INNER JOIN `utilisateurs` ON commentaires.id_utilisateur = utilisateurs.id ORDER BY rand() LIMIT $comm");
+                    while ($row_comm = mysqli_fetch_array($requete_comm,MYSQLI_ASSOC)){
+                ?>
             
-            <?php
-                }
-            ?>
+                <div class="index_comm">
+                    <p class="login_comm">Posté par : <a><?= $row_comm['login'] ?></a> </p>
+                    <p class="date_comm">Le <?= $row_comm['datefr']?> à <?= $row_comm['heurefr'] ?></p>
+                    <p class="comm"><?= $row_comm['commentaire'] ?></p>
                 </div>
+            
+                <?php
+                }
+                ?>
+            </div>
         </div>
 
     </main>
