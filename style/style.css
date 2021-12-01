@@ -78,7 +78,7 @@ nav {
 .titre_contenu_index {
     font-family: "Oxygen";
     font-size: 4vh;
-    margin-top: 7vh;
+    margin-top: 15vh;
 }
 
 .sous_titre_contenu_index {
@@ -105,11 +105,12 @@ nav {
 
 .cont_comm {
     margin-top: 5vh;
+    padding-bottom: 12vh;
     width: 40%;
 }
 
 .index_comm:nth-child(even){
-    background-color: black;
+    background-color: #101820FF;
     color: white;
 }
 
@@ -146,20 +147,84 @@ nav {
 }
 
 footer {
-    background-color: #F2AA4CFF;
+    height: 35vh;
+    background-color:#101820FF ;
     bottom: 0;
     display: flex;
     justify-content: space-evenly;
 }
 
+.bloc_abso_footer {
+    margin-top: -2%;
+    width: 60%;
+    background-color:#F2AA4CFF ;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 20px -20px 3px -10px rgba(0, 0, 0, 0.192);
+}
+
+.titre_abso {
+    font-family: "Spartan";
+    font-weight: bold;
+    font-size: 26px;
+    color: white;
+    margin-left: 15vh;
+}
+
+.sous_titre_abso {
+    margin-top: -4%;
+    padding-bottom: 1vh;
+    font-family: "Verdana";
+    font-size: 18px;
+    color: rgb(78, 78, 78);
+    margin-left: 15vh;
+}
+
+.bloc_abso_footer a {
+    text-align: center;
+    color: white;
+    font-family: "Arial";
+    text-decoration: none;
+    background-color: #101820FF;
+    width: 15%;
+    height: 1px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    margin-top: 5vh;
+    margin-right: 7%;
+}
+
+.bloc_abso_footer a:hover{
+    background-color: rgb(44, 54, 65) ;
+}
+
 .bloc_footer_nav, .bloc_footer_media {
     text-align: center;
+    margin-top: 14vh;
+}
+
+.bloc_footer_nav a {
+    font-weight: bold;
+    color: #F2AA4CFF;
+    text-decoration: none;
+    background: linear-gradient(to top, #F2AA4CFF 0%, #F2AA4CFF 10%, transparent 10.01%) no-repeat left bottom/ 0 100%;
+    background-size: 0 100%;
+    transition: background-size .5s;
+}
+
+.bloc_footer_nav a:hover {
+    transition: .5s ease-out;
+    color: rgb(160, 160, 160);
+    background-size: 100% 100%;
 }
 
 .liste_footer_nav {
     display: flex;
     list-style: none;
-    gap: 3vh;
+    margin-left: -5%;
+    gap: 7vh;
 }
 
 .liste_footer_media {
@@ -167,6 +232,21 @@ footer {
     list-style: none;
     gap: 3vh;
 }
+
+.titre_footer_nav {
+    font-family: "Spartan";
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.liste_footer_nav a {
+    font-size: 2vh;
+    font-family: "Spartan";
+    color: #F2AA4CFF;
+    text-decoration: none;
+}
+
 
 
 /*----------------------Début du style de la page 'inscription'---------------------------*/
