@@ -491,6 +491,27 @@ label:hover{
     text-align: center;
 }
 
+.bloc_main_commentaire form {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+}
+
+.bloc_main_commentaire label {
+    color: #101820FF;
+    font-size: 4vh;
+}
+
+.bloc_main_commentaire a {
+    font-size: 2vh;
+}
+
+.text_ar {
+    text-align: center;
+    font-family: "Spartan";
+}
+
 /*----------------------Début du style de la page 'livre-or'-------------------------------*/
 
 .comm_livre {

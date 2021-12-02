@@ -73,7 +73,7 @@ $result_affichage = mysqli_fetch_all($requete_affichage_comm1, MYSQLI_ASSOC);
                         <div class="comm_livre">
                             <p class="login_comm">Posté par : <?= $result['login']?></p>
                             <i class="date_comm">Le <?= $result['datefr']?> à <?= $result['heurefr'] ?></i>
-                            <p class="comm"><?= $result['commentaire'] ?></p>
+                            <p class="comm"><?= nl2br($result['commentaire']) ?></p>
                         </div>
                 <?php
                     } 
@@ -86,7 +86,7 @@ $result_affichage = mysqli_fetch_all($requete_affichage_comm1, MYSQLI_ASSOC);
                         <div class="comm_livre">
                             <p class="login_comm">Posté par : <?= $res['login'] ?></p>
                             <i class="date_comm">Le <?= $res['datefr']?> à <?= $res['heurefr'] ?></i>
-                            <p class="comm"><?= $res['commentaire'] ?></p>
+                            <p class="comm"><?= nl2br($res['commentaire']) ?></p>
                         </div>
 
                 <?php
@@ -97,7 +97,7 @@ $result_affichage = mysqli_fetch_all($requete_affichage_comm1, MYSQLI_ASSOC);
                                 <div class="comm_livre">
                                     <p class="login_comm">Posté par : <?= $result['login']?></p>
                                     <i class="date_comm">Le <?= $result['datefr']?> à <?= $result['heurefr'] ?></i>
-                                    <p class="comm"><?= $result['commentaire'] ?></p>
+                                    <p class="comm"><?= nl2br($result['commentaire']) ?></p>
                                 </div>
                         <?php
                             } 

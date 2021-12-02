@@ -79,7 +79,7 @@ $display ="";
                 <div class="index_comm">
                     <p class="login_comm">Posté par : <a><?= $row_comm['login'] ?></a> </p>
                     <p class="date_comm">Le <?= $row_comm['datefr']?> à <?= $row_comm['heurefr'] ?></p>
-                    <p class="comm"><?= $row_comm['commentaire'] ?></p>
+                    <p class="comm"><?= nl2br($row_comm['commentaire']) ?></p>
                 </div>
             
                 <?php

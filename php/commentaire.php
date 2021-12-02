@@ -49,9 +49,9 @@ if ( isset ($_POST['sub_commentaire'])){
     <main>
         <div class="bloc_main_commentaire">
             <form action="" method="post">
-                <label for="lab_commentaire"> Votre commentaire <br>
+                <label for="lab_commentaire"> Laissez nous un commentaire <br>
                     <a class="erreur"><?= $error ?></a><br>
-                    <textarea placeholder="Entrez votre commentaire" name="commentaire" rows="9" cols="70" maxlength="500" minlength="20"></textarea><br>
+                    <textarea class="text_ar" wrap="hard" placeholder="Entrez votre commentaire" name="commentaire" rows="9" cols="70" maxlength="500" minlength="20"></textarea><br>
                     
                     <input type="submit" name="sub_commentaire" value="Envoyer">
                     <br>
