@@ -119,20 +119,19 @@ if ( isset ( $_POST['sub_newpassword'] ) ) {
                 <li><a href="../index.php">Accueil</a></li>
                 <li><a href="livre-or.php">Livre d'or</a></li>
                 <li><a href="commentaire.php">Commentaire</a></li>
-                <form method="post" action="../require/deconnexion.php">
-                    <input type="submit" name="deconnexion" value="Deconnexion">
-                </form>
+                <li><a href="require/deconnexion.php">Deconnexion</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <div class="bloc_main_profil">
-            <h3>Modifier vos informations</h3>
+            <div class="sous_bloc_profil">
+            <h3 class="sous_titre_profil">Modifier vos informations</h3>
             <form method="post" action="">
                 <label for="login"> Login <br>
                     <input type="text" name="login" placeholder="<?= $_SESSION['login'] ?>">
-                    <input type="submit" name="sub_login" value="✎">
+                    <input class="submit_profil" type="submit" name="sub_login" value="✎">
                 </label><br>
                 <a class="erreur"><?= $error ?></a>
 
@@ -145,7 +144,7 @@ if ( isset ( $_POST['sub_newpassword'] ) ) {
             <form method="post" action="" style="display: <?= $display1 ?>;">
                 <label for="password"> Ancien password <br>
                     <input type="password" name="old_password" placeholder="Votre ancien password">
-                    <input type="submit" name="sub_oldpassword" value="✎">
+                    <input class="submit_profil" type="submit" name="sub_oldpassword" value="✎">
                 </label><br>
                 <a class="echo"><?= $echo2 ?></a>
             </form>
@@ -161,9 +160,9 @@ if ( isset ( $_POST['sub_newpassword'] ) ) {
                 </label>
                 <a class="erreur"><?= $error2 ?></a>
                 <br>
-                <input type="submit" name="sub_newpassword" value="Modifier">
+                <input class="submitt_profil" type="submit" name="sub_newpassword" value="Modifier">
             </form>
-
+            </div>
         </div>
     </main>
 
