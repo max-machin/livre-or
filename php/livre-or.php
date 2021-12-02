@@ -98,9 +98,10 @@ $result_affichage = mysqli_fetch_all($requete_affichage_comm1, MYSQLI_ASSOC);
                                     <p class="login_comm">Posté par : <?= $result['login']?></p>
                                     <i class="date_comm">Le <?= $result['datefr']?> à <?= $result['heurefr'] ?></i>
                                     <p class="comm"><?= nl2br($result['commentaire']) ?></p>
+
                                 </div>
                         <?php
-                            } 
+                    } 
                 }
                 ?>
     </main>

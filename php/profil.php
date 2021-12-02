@@ -95,6 +95,11 @@ if ( isset ( $_POST['sub_newpassword'] ) ) {
     }
 }
 
+$echo3 = "";
+
+if( isset($_POST['supp_comm'])){
+    $echo3 = "Voulez vraiment supprimer votre commentaire ?";
+}
 
 ?>
 
@@ -124,7 +129,7 @@ if ( isset ( $_POST['sub_newpassword'] ) ) {
         </nav>
     </header>
 
-    <main>
+    <main class="main_profil">
         <div class="bloc_main_profil">
             <div class="sous_bloc_profil">
             <h3 class="sous_titre_profil">Modifier vos informations</h3>
@@ -163,6 +168,26 @@ if ( isset ( $_POST['sub_newpassword'] ) ) {
                 <input class="submitt_profil" type="submit" name="sub_newpassword" value="Modifier">
             </form>
             </div>
+        </div>
+        <div class="bloc_main_profil2">
+            <h3 class="sous_titre_profil2">Vos commentaires postés</h3>
+            <hr>
+            <?php
+                $req_com = mysqli_query($conn,"SELECT commentaire, DATE_FORMAT(date, '%d/%m/%Y') AS 'datefr' , DATE_FORMAT(date, '%H:%i:%s') AS 'heurefr' FROM commentaires WHERE id_utilisateur = '$_SESSION[id]'");
+                $res_com = mysqli_fetch_all($req_com, MYSQLI_ASSOC);
+                foreach($req_com as $res){
+            ?>
+            <div class="bloc_profil">
+                <p class="date_comm_profil">Posté le <?= $res['datefr'] ?> à <?= $res['heurefr'] ?> </p>
+                <p class="comm_profil"> <?= nl2br($res['commentaire']) ?> </p>
+                <?= $echo3 ?>
+                <form method="post" action="">
+                    <input type="submit" name="supp_comm" value="Supprimer">
+                </form>
+            </div>
+            <?php
+                }
+            ?>
         </div>
     </main>
 

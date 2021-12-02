@@ -419,6 +419,14 @@ label:hover{
     padding-bottom: 10vh;
 }
 
+.bloc_main_profil2 {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
 .sous_bloc_profil {
     border-radius: 5px;
 }
@@ -427,8 +435,9 @@ label:hover{
     color: #F2AA4CFF;
     padding-top: 1vh;
     padding-bottom: 1vh;
-    margin-right: 35%;
-    margin-left: 35%;
+    padding-left: 10vh;
+    padding-right: 10vh;
+    
     transition: 1s ease-out;
     background-color: #101820FF;
     box-shadow: 30px -30px 3px -10px rgba(0, 0, 0, 0.226);
@@ -443,6 +452,18 @@ label:hover{
     margin-top: 10vh;
     margin-bottom: 4vh;
     font-family: "Spartan";
+}
+
+.sous_titre_profil2 {
+    margin-top: 10vh;
+    margin-bottom: 4vh;
+    font-family: "Spartan";
+    color: #F2AA4CFF;
+}
+
+.main_profil {
+    display: flex;
+    justify-content: space-around;
 }
 
 .bloc_main_profil input {
@@ -481,6 +502,34 @@ label:hover{
     color: white;
 }
 
+.date_comm_profil {
+    font-style: italic;
+    font-size: 10px;
+}
+
+.comm_profil {
+    font-weight: bold;
+}
+
+.bloc_profil {
+    padding: 1px 20px;
+    margin-bottom: 2vh;
+    border-radius: 4px;
+    font-family: "Spartan";
+}
+
+.bloc_profil:nth-child(odd){
+    background-color: rgba(0, 0, 0, 0.171);
+}
+
+.bloc_profil:hover{
+    background-color: #F2AA4CFF;
+    color: white;
+}
+
+.bloc_profil input {
+    margin-bottom: 1vh;
+}
 .echo {
     color: rgb(5, 192, 5);
 }
