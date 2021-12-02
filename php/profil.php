@@ -97,10 +97,6 @@ if ( isset ( $_POST['sub_newpassword'] ) ) {
 
 $echo3 = "";
 
-if( isset($_POST['supp_comm'])){
-    $echo3 = "Voulez vraiment supprimer votre commentaire ?";
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -124,7 +120,7 @@ if( isset($_POST['supp_comm'])){
                 <li><a href="../index.php">Accueil</a></li>
                 <li><a href="livre-or.php">Livre d'or</a></li>
                 <li><a href="commentaire.php">Commentaire</a></li>
-                <li><a href="require/deconnexion.php">Deconnexion</a></li>
+                <li><a href="../require/deconnexion.php">Deconnexion</a></li>
             </ul>
         </nav>
     </header>
@@ -173,21 +169,27 @@ if( isset($_POST['supp_comm'])){
             <h3 class="sous_titre_profil2">Vos commentaires postés</h3>
             <hr>
             <?php
-                $req_com = mysqli_query($conn,"SELECT commentaire, DATE_FORMAT(date, '%d/%m/%Y') AS 'datefr' , DATE_FORMAT(date, '%H:%i:%s') AS 'heurefr' FROM commentaires WHERE id_utilisateur = '$_SESSION[id]'");
+                $req_com = mysqli_query($conn,"SELECT id,commentaire, DATE_FORMAT(date, '%d/%m/%Y') AS 'datefr' , DATE_FORMAT(date, '%H:%i:%s') AS 'heurefr' FROM commentaires WHERE id_utilisateur = '$_SESSION[id]'");
                 $res_com = mysqli_fetch_all($req_com, MYSQLI_ASSOC);
+                
                 foreach($req_com as $res){
             ?>
             <div class="bloc_profil">
                 <p class="date_comm_profil">Posté le <?= $res['datefr'] ?> à <?= $res['heurefr'] ?> </p>
                 <p class="comm_profil"> <?= nl2br($res['commentaire']) ?> </p>
-                <?= $echo3 ?>
+               
                 <form method="post" action="">
                     <input type="submit" name="supp_comm" value="Supprimer">
                 </form>
             </div>
+            
             <?php
                 }
             ?>
+        </div>
+        <div class="bloc_main_profil">
+        <h3 class="sous_titre_profil">Publiez un commentaire !</h3>
+        <a href="commentaire.php" class="ref_profil">Commentaire</a>
         </div>
     </main>
 

@@ -40,9 +40,7 @@ if ( isset ($_POST['sub_commentaire'])){
                 <li><a href="../index.php">Accueil</a></li>
                 <li><a href="livre-or.php">Livre d'or</a></li>
                 <li><a href="profil.php">Mon profil</a></li>
-                <form method="post" action="../require/deconnexion.php">
-                    <input type="submit" name="deconnexion" value="Deconnexion">
-                </form>
+                <li><a href="../require/deconnexion.php">Deconnexion</a></li>
             </ul>
         </nav>
     </header>
