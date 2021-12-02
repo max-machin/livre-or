@@ -147,7 +147,7 @@ nav {
 }
 
 footer {
-    height: 35vh;
+    height: 40vh;
     background-color:#101820FF ;
     bottom: 0;
     display: flex;
@@ -202,7 +202,7 @@ footer {
 
 .bloc_footer_nav, .bloc_footer_media {
     text-align: center;
-    margin-top: 14vh;
+    margin-top: 16vh;
 }
 
 .bloc_footer_nav a {
@@ -220,24 +220,18 @@ footer {
     background-size: 100% 100%;
 }
 
-.liste_footer_nav {
-    display: flex;
-    list-style: none;
-    margin-left: -5%;
-    gap: 7vh;
-}
-
-.liste_footer_media {
-    display: flex;
-    list-style: none;
-    gap: 3vh;
-}
-
 .titre_footer_nav {
     font-family: "Spartan";
     color: white;
     font-size: 18px;
     font-weight: bold;
+}
+
+.liste_footer_nav {
+    display: flex;
+    list-style: none;
+    margin-left: -5%;
+    gap: 7vh;
 }
 
 .liste_footer_nav a {
@@ -246,6 +240,36 @@ footer {
     color: #F2AA4CFF;
     text-decoration: none;
 }
+
+.titre_footer_media {
+    font-family: "Spartan";
+    color: #F2AA4CFF;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.liste_footer_media {
+    display: flex;
+    list-style: none;
+    gap: 5vh;
+    margin-left: -5%;
+}
+
+.liste_footer_media i {
+    color: white;
+    font-size: 4vh;
+}
+
+.liste_footer_media i:hover{
+    transition: .5s ease-out;
+    color: #F2AA4CFF;
+}
+
+
+
+
+
+
 
 
 

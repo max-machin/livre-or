@@ -14,7 +14,7 @@ require "require/require_bdd.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="5";/>
+    <meta http-equiv="refresh" content="12";/>
     <script src="https://kit.fontawesome.com/81dc42ea59.js" crossorigin="anonymous"></script>
     <link href="image/fontawesome-free-5.15.4-web.zip/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
@@ -140,11 +140,11 @@ require "require/require_bdd.php";
             <div class="bloc_footer_media">
                 <h4 class="titre_footer_media">Réseaux sociaux</h4>
                 <ul class="liste_footer_media">
-                    <li><i class="fab fa-facebook-square"></i></li>
-                    <li><i class="fab fa-github-square"></i></li>
-                    <li><i class="fab fa-twitter-square"></i></li>
-                    <li><i class="fab fa-instagram-square"></i></li>
-                    <li><i class="fab fa-youtube-square"></i></li>
+                    <li><a href="https://www.facebook.com/LaPlateformeIO"><i class="fab fa-facebook-square"></i></a></li>
+                    <li><a href="https://github.com/max-machin/livre-or"><i class="fab fa-github-square"></i></a></li>
+                    <li><a href="https://twitter.com/LaPlateformeIO"><i class="fab fa-twitter-square"></i></a></li>
+                    <li><a href="https://www.instagram.com/laplateformeio/?hl=am-et"><i class="fab fa-instagram-square"></i></a></li>
+                    <li><a href="https://www.youtube.com/watch?v=a7_WFUlFS94&ab_channel=Fireship"><i class="fab fa-youtube-square"></i></a></li>
                 </ul>
             </div>
         </footer>
