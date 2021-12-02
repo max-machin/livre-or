@@ -4,6 +4,7 @@ session_start();
 
 require "require/require_bdd.php";
 
+$display ="";
 ?>
 
 <!DOCTYPE html>
@@ -35,9 +36,7 @@ require "require/require_bdd.php";
                     <li><a href="php/profil.php">Mon profil</a></li>
                     <li><a href="php/livre-or.php">Livre d'or</a></li>
                     <li><a href="php/commentaire.php">Commentaire</a></li>
-                    <form method="post" action="require/deconnexion.php">
-                        <input type="submit" name="deconnexion" value="Deconnexion">
-                    </form>
+                    <li><a href="require/deconnexion.php">Deconnexion</a></li>
                 </ul>
             </nav>
         </header>
@@ -92,8 +91,10 @@ require "require/require_bdd.php";
     </main>
 
     <!-- 2 : Affichage footer en mode 'connecté' -->
-    <?php if (isset($_SESSION['id']) && $_SESSION['login'] != 'admin') { ?>
-        <footer>
+    <?php if (isset($_SESSION['id']) && $_SESSION['login'] != 'admin') {
+        $display = "co";
+        ?>
+        <footer class="<?= $display ?>_footer">
             <div class="bloc_footer_nav">
                 <h4 class="titre_footer_nav">Navigation</h4>
                 <ul class="liste_footer_nav">
@@ -120,8 +121,10 @@ require "require/require_bdd.php";
     <?php } ?>
 
     <!-- 3 : Affichage du footer en mode 'déconnecté' -->
-    <?php if (!isset($_SESSION['id'])) { ?>
-        <footer>
+    <?php if (!isset($_SESSION['id'])) {
+        $display = "deco";
+        ?>
+        <footer class="<?= $display ?>_footer">
             <div class="bloc_abso_footer">
                 <div class="sous_bloc_abso">
                     <p class="titre_abso">Envie de nous rejoindre ?</p>

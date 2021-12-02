@@ -51,7 +51,7 @@ if ( isset ( $_POST['submit'])){
         <h2 class="sous_titre_index">Inscription</h2>
         <nav>
             <ul class="liste_nav">
-                <li><a href="inscription.php">Inscription</a></li>
+                <li><a href="../index.php">Accueil</a></li>
                 <li><a href="livre-or.php">Livre d'or</a></li>
                 <li><a href="connexion.php">Connexion</a></li>
             </ul>
@@ -60,11 +60,11 @@ if ( isset ( $_POST['submit'])){
 
 
     <main>
-        <div class="contenu_index">
+        <div class="contenu_inscription">
 
             <form action="" method="post">
 
-                <label for="login"> Login <br>
+                <label for="login"> Login<br>
                 <input type="text" name="login" placeholder="login">
                 </label><br>
 
@@ -77,14 +77,14 @@ if ( isset ( $_POST['submit'])){
                 </label><br>
                 <a class="erreur"><?= $error ?></a>
                 <br>
-                <input type="submit" name="submit" value="S'inscrire">
+                <input class="submit_inscr" type="submit" name="submit" value="S'inscrire">
             </form>
 
         </div>
 
     </main>
 
-    <footer>
+    <footer class="co_footer">
         <div class="bloc_footer_nav">
             <h4 class="titre_footer_nav">Navigation</h4>
             <ul class="liste_footer_nav">

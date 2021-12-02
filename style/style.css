@@ -1,5 +1,5 @@
 body {
-    padding: 0 0;
+    padding: 0;
     margin: 0;
     background-image: white;
 }
@@ -154,6 +154,11 @@ footer {
     justify-content: space-evenly;
 }
 
+.co_footer {
+    height: 30vh;
+    padding-bottom: 15vh;
+}
+
 .bloc_abso_footer {
     margin-top: -2%;
     width: 60%;
@@ -202,8 +207,9 @@ footer {
 
 .bloc_footer_nav, .bloc_footer_media {
     text-align: center;
-    margin-top: 16vh;
+    margin-top: 15vh;
 }
+
 
 .bloc_footer_nav a {
     font-weight: bold;
@@ -265,15 +271,79 @@ footer {
     color: #F2AA4CFF;
 }
 
-
-
-
-
-
-
-
-
 /*----------------------Début du style de la page 'inscription'---------------------------*/
+
+.contenu_inscription {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.contenu_inscription form {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+    border-radius: 5px;
+    width: 30%;
+    background-color: transparent;
+}
+
+.contenu_inscription form:hover {
+    color: #F2AA4CFF;
+    background-color: #101820FF;
+    transition: 1s ease-out;
+    box-shadow: 30px -30px 3px -10px rgba(0, 0, 0, 0.226);
+}
+
+.contenu_inscription form input:hover {
+    border-radius: 20px;
+    transition: .5s ease-out;
+}
+
+.contenu_inscription form input {
+    border-radius: 3px;
+    margin-bottom: 4vh;
+    height: 20px;
+    width: 45%;
+    text-align: center;
+    box-shadow: 2px 4px 2px 2px rgba(0, 0, 0, 0.226);
+}
+
+.contenu_inscription form input:focus {
+    outline:none;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: .5s ease-out;
+}
+
+label {
+    font-family: "Spartan";
+}
+
+label:hover{
+    transition: .5s ease-out;
+    color: white;
+}
+
+.submit_inscr {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #F2AA4CFF;
+    border-radius: 3px;
+    border: none;
+    height: 25px;
+}
+
+.submit_inscr:hover {
+    transition: .8s ease-out;
+    background-color: #F2AA4CFF;
+    border: none;
+    width: 25%;
+    border-radius: 20px;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
 
 .erreur {
     color: red;
@@ -281,7 +351,39 @@ footer {
 
 /*----------------------Début du style de la page 'connexion'----------------------------*/
 .bloc_main_connexion {
+    display: flex;
+    justify-content: center;
     text-align: center;
+}
+
+.bloc_main_connexion form {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+    border-radius: 5px;
+    width: 30%;
+    background-color: transparent;
+}
+
+.bloc_main_connexion form:hover {
+    color: #F2AA4CFF;
+    background-color: #101820FF;
+    transition: 1s ease-out;
+}
+
+.bloc_main_connexion input {
+    margin-bottom: 4vh;
+    height: 20px;
+    width: 45%;
+    text-align: center;
+    box-shadow: 2px 4px 2px 2px rgba(0, 0, 0, 0.226);
+    border-radius: 3px; 
+}
+
+.bloc_main_connexion input:focus {
+    outline-color: transparent;
+    font-weight: bold;
 }
 
 /*----------------------Début du style de la page 'profil'-------------------------------*/
