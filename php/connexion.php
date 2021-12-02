@@ -88,7 +88,7 @@ if ( isset( $_POST['submit'] ) ) {
                 </label><br>
 
                 <a class="erreur"><?= $error ?></a><br>
-                <input type="submit" name="submit" value="connexion">
+                <input class="submit_conn" type="submit" name="submit" value="Connexion">
             </form>
         </div>
     </main>

@@ -370,10 +370,12 @@ label:hover{
     color: #F2AA4CFF;
     background-color: #101820FF;
     transition: 1s ease-out;
+    box-shadow: 30px -30px 3px -10px rgba(0, 0, 0, 0.226)
 }
 
 .bloc_main_connexion input {
     margin-bottom: 4vh;
+    outline: none;
     height: 20px;
     width: 45%;
     text-align: center;
@@ -381,9 +383,30 @@ label:hover{
     border-radius: 3px; 
 }
 
+.bloc_main_connexion input:hover {
+    border-radius: 20px;
+    transition: .5s ease-out;
+}
+
 .bloc_main_connexion input:focus {
+    border-radius: 20px;
+    transition: .5s ease-out;
     outline-color: transparent;
     font-weight: bold;
+}
+
+.submit_conn {
+    background-color: #F2AA4CFF;
+    border: none;
+    height: 25px;
+    border-radius: 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.submit_conn:hover{
+
+    color: white;
+    width: 25%;
 }
 
 /*----------------------Début du style de la page 'profil'-------------------------------*/
