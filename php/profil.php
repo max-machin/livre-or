@@ -144,7 +144,7 @@ require "../require/requireHeader.php";
             <h3 class="sous_titre_profil2">Vos commentaires postés</h3>
             <hr>
             <?php
-                $req_com = mysqli_query($conn,"SELECT id,commentaire, DATE_FORMAT(date, '%d/%m/%Y') AS 'datefr' , DATE_FORMAT(date, '%H:%i:%s') AS 'heurefr' FROM commentaires WHERE id_utilisateur = '$_SESSION[id]'");
+                $req_com = mysqli_query($conn,"SELECT id,commentaire, DATE_FORMAT(date, '%d/%m/%Y') AS 'datefr' , DATE_FORMAT(date, '%H:%i:%s') AS 'heurefr' FROM commentaires WHERE id_utilisateur = '$_SESSION[id]' ORDER BY `date` DESC");
                 while($res_com = mysqli_fetch_array($req_com, MYSQLI_ASSOC)){
                     if (isset($_POST['supp_comm']) && $res_com['id'] == $_POST['id']){
                         $id = $_POST['id'];
