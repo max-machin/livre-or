@@ -109,11 +109,11 @@ $display ="";
             <div class="bloc_footer_media">
                 <h4 class="titre_footer_media">Réseaux sociaux</h4>
                 <ul class="liste_footer_media">
-                    <li><i class="fab fa-facebook-square"></i></li>
-                    <li><i class="fab fa-github-square"></i></li>
-                    <li><i class="fab fa-twitter-square"></i></li>
-                    <li><i class="fab fa-instagram-square"></i></li>
-                    <li><i class="fab fa-youtube-square"></i></li>
+                    <li><a href="https://www.facebook.com/LaPlateformeIO"><i class="fab fa-facebook-square"></i></a></li>
+                    <li><a href="https://github.com/max-machin/livre-or"><i class="fab fa-github-square"></i></a></li>
+                    <li><a href="https://twitter.com/LaPlateformeIO"><i class="fab fa-twitter-square"></i></a></li>
+                    <li><a href="https://www.instagram.com/laplateformeio/?hl=am-et"><i class="fab fa-instagram-square"></i></a></li>
+                    <li><a href="https://www.youtube.com/watch?v=a7_WFUlFS94&ab_channel=Fireship"><i class="fab fa-youtube-square"></i></a></li>
                 </ul>
             </div>
         </footer>
