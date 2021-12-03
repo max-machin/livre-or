@@ -17,6 +17,7 @@ $result_affichage = mysqli_fetch_all($requete_affichage_comm1, MYSQLI_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/81dc42ea59.js" crossorigin="anonymous"></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap');</style>
     <link href="image/fontawesome-free-5.15.4-web.zip/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="../style/style.css">
     <title>Livre d'or</title>
@@ -32,9 +33,7 @@ $result_affichage = mysqli_fetch_all($requete_affichage_comm1, MYSQLI_ASSOC);
                     <li><a href="../index.php">Accueil</a></li>
                     <li><a href="profil.php">Mon profil</a></li>
                     <li><a href="commentaire.php">Commentaire</a></li>
-                    <form method="post" action="../require/deconnexion.php">
-                        <input type="submit" name="deconnexion" value="Deconnexion">
-                    </form>
+                    <li><a href="../require/deconnexion.php">Deconnexion</a></li>
                 </ul>
             </nav>
         </header>
@@ -57,34 +56,35 @@ $result_affichage = mysqli_fetch_all($requete_affichage_comm1, MYSQLI_ASSOC);
     <?php } ?>
     
     <main>
-        <div class="box_form">
-            <form name="form_desc" method="post" action="">
-                Filtrez les commentaires :
-                <input type="submit" name="desc" value="Nouveaux">
-                <input type="submit" name="asc" value="Anciens">
-
-            </form>
-        </div>
+        <div class="main_livreor">
+            <div class="form_livreor">
+                <form name="form_desc" method="post" action="">
+                    <p class="sub_livre_or"> Filtrez les commentaires : </p>
+                    <input type="submit" name="desc" value="Nouveaux">
+                    <input type="submit" name="asc" value="Anciens">
+                </form>
+            </div>
+            <div class="comm_livreor">
                 <?php
 
                 if (isset($_POST['desc'])){
                     foreach($result_affichage as $result){
                 ?>
                         <div class="comm_livre">
-                            <p class="login_comm">Posté par : <?= $result['login']?></p>
+                            <p class="login_comm">Posté par : <a class="log_com_a"><?= $result['login']?></a></p>
                             <i class="date_comm">Le <?= $result['datefr']?> à <?= $result['heurefr'] ?></i>
                             <p class="comm"><?= nl2br($result['commentaire']) ?></p>
                         </div>
                 <?php
                     } 
                 }
-                if (isset ($_POST['asc'])){
+                elseif (isset ($_POST['asc'])){
                     $requete_affichage_asc = mysqli_query($conn , "SELECT login,commentaire, DATE_FORMAT(date, '%d/%m/%Y') AS 'datefr' , DATE_FORMAT(date, '%H:%i:%s') AS 'heurefr' FROM `commentaires` INNER JOIN `utilisateurs` ON commentaires.id_utilisateur = utilisateurs.id ORDER BY `date` ASC");
                     $result_affichage_asc = mysqli_fetch_all($requete_affichage_asc, MYSQLI_ASSOC);
                     foreach($result_affichage_asc as $res){
                 ?>
                         <div class="comm_livre">
-                            <p class="login_comm">Posté par : <?= $res['login'] ?></p>
+                            <p class="login_comm">Posté par : <a class="log_com_a"><?= $res['login'] ?></a></p>
                             <i class="date_comm">Le <?= $res['datefr']?> à <?= $res['heurefr'] ?></i>
                             <p class="comm"><?= nl2br($res['commentaire']) ?></p>
                         </div>
@@ -95,15 +95,16 @@ $result_affichage = mysqli_fetch_all($requete_affichage_comm1, MYSQLI_ASSOC);
                     foreach($result_affichage as $result){
                         ?>
                                 <div class="comm_livre">
-                                    <p class="login_comm">Posté par : <?= $result['login']?></p>
+                                    <p class="login_comm">Posté par : <a class="log_com_a"><?= $result['login']?></a></p>
                                     <i class="date_comm">Le <?= $result['datefr']?> à <?= $result['heurefr'] ?></i>
                                     <p class="comm"><?= nl2br($result['commentaire']) ?></p>
-
                                 </div>
                         <?php
                     } 
                 }
                 ?>
+            </div>
+        </div>
     </main>
 
 

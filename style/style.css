@@ -600,7 +600,35 @@ label:hover{
     margin-bottom: 2%;
 }
 
-.box_form {
-    text-align: center;
+.main_livreor {
+    display: flex;
+    justify-content: space-around;
 }
 
+.form_livreor {
+    margin-top: 30vh;
+}
+
+.comm_livreor {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.comm_livre:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.171);
+}
+
+.comm_livre:hover {
+    background-color: rgba(0, 0, 0, 0.411);
+    box-shadow: 10px 6px 3px 3px rgba(0, 0, 0, 0.247);
+    transition: .3s ease-out;
+    color: white;
+}
+
+.login_comm_a {
+    color: rgb(105, 90, 69);
+}
+
+.form_livreor {
+    background-color: ;
+}
