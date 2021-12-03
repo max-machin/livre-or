@@ -174,6 +174,8 @@ $echo3 = "";
                     if (isset($_POST['supp_comm']) && $res_com['id'] == $_POST['id']){
                         $id = $_POST['id'];
                         $delete = mysqli_query($conn , "DELETE FROM commentaires WHERE id = '$id'");
+                        header('location: profil.php');
+                        exit;
                     }
             ?>
             <div class="bloc_profil">

@@ -65,6 +65,7 @@ $result_affichage = mysqli_fetch_all($requete_affichage_comm1, MYSQLI_ASSOC);
                 </form>
             </div>
             <div class="comm_livreor">
+                <h3 class="titre_livreor">Les commentaires des utilisateurs</h3>
                 <?php
 
                 if (isset($_POST['desc'])){

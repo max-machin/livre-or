@@ -106,21 +106,42 @@ nav {
 .cont_comm {
     margin-top: 5vh;
     padding-bottom: 12vh;
-    width: 40%;
+    width: 45%;
 }
 
 .index_comm:nth-child(even){
     background-color: #101820FF;
     color: white;
 }
+.index_comm:hover {
+    width: 90%;
+    box-shadow: 10px 10px 2px 1px rgba(0, 0, 0, 0.445);
+    transition: .3s ease-out;
+} 
 
+.index_comm:nth-child(odd):hover {
+    background-color: rgba(0, 0, 0, 0.178);
+}
 .index_comm {
     display: block;
     flex-direction: column;
     text-align: center;
     margin-right: 5vh;
     margin-left: 5vh;
+    animation-duration: 2s;
+    animation-name: slidein;
 }
+
+@keyframes slidein {    
+    from {
+        margin-right: -100px;
+    }
+    100% {
+        margin-right: 8vh;
+    }
+}
+
+
 
 .login_comm {
     font-family: "Oxygen";
@@ -598,6 +619,8 @@ label:hover{
 .comm_livre {
     text-align: center;
     margin-bottom: 2%;
+    width: 120%;
+    border-radius: 5px;
 }
 
 .main_livreor {
@@ -614,21 +637,53 @@ label:hover{
     margin-bottom: 10vh;
 }
 
+.titre_livreor {
+    text-align: center;
+    font-family: "Oxygen";
+    font-size: 5vh;
+    margin-left:20%;
+    color: #F2AA4CFF;
+    text-decoration: underline;
+    
+}
+
 .comm_livre:nth-child(odd) {
-    background-color: rgba(0, 0, 0, 0.171);
+    background-color:#101820FF;
+    color: white;
+}
+
+.comm_livre:nth-child(even):hover {
+    background-color: rgba(0, 0, 0, 0.178);
 }
 
 .comm_livre:hover {
-    background-color: rgba(0, 0, 0, 0.411);
-    box-shadow: 10px 6px 3px 3px rgba(0, 0, 0, 0.247);
+    width: 122%;
+    box-shadow: 10px 10px 2px 1px rgba(0, 0, 0, 0.445);
     transition: .3s ease-out;
-    color: white;
 }
 
 .login_comm_a {
     color: rgb(105, 90, 69);
 }
 
-.form_livreor {
-    background-color: ;
+.sub_livre_or {
+    font-family: "Oxygen";
+    font-size: 3vh;
+    font-weight: bold;
 }
+
+.form_livreor input {
+    margin-right: 8vh;
+    font-family: "Spartan";
+    box-shadow: 3px 4px 1px 1px rgba(0, 0, 0, 0.226)  
+}
+
+.form_livreor input:hover {
+    transition: .5s ease-out;
+    background-color: #F2AA4CFF;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 4px 4px 3px 2px rgba(0, 0, 0, 0.226);
+}
+
+
