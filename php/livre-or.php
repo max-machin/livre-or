@@ -8,53 +8,9 @@ require "../require/require_bdd.php";
 $requete_affichage_comm1 = mysqli_query ( $conn , "SELECT login,commentaire, DATE_FORMAT(date, '%d/%m/%Y') AS 'datefr' , DATE_FORMAT(date, '%H:%i:%s') AS 'heurefr' FROM `commentaires` INNER JOIN `utilisateurs` ON commentaires.id_utilisateur = utilisateurs.id ORDER BY `date` DESC");
 $result_affichage = mysqli_fetch_all($requete_affichage_comm1, MYSQLI_ASSOC);
 
+require "../require/requireHeader.php";
+
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/81dc42ea59.js" crossorigin="anonymous"></script>
-    <style>@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap');</style>
-    <link href="image/fontawesome-free-5.15.4-web.zip/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="../style/style.css">
-    <title>Livre d'or</title>
-</head>
-
-<body>
-    <!-- 2 : Si $_SESSION['login'] est définie et qu'il est différent d'admin alors l'user est considéré comme connecté. -->
-    <?php if (isset($_SESSION['id']) && $_SESSION['login'] != 'admin') { ?>
-        <header>
-            <h1 class="titre_index">Livre d'or</h1>
-            <nav>
-                <ul class="liste_nav">
-                    <li><a href="../index.php">Accueil</a></li>
-                    <li><a href="profil.php">Mon profil</a></li>
-                    <li><a href="commentaire.php">Commentaire</a></li>
-                    <li><a href="../require/deconnexion.php">Deconnexion</a></li>
-                </ul>
-            </nav>
-        </header>
-    <!-- 2 : Fin de l'affichage du header  -->
-    <?php } ?>
-
-    <!-- 3 : Si $_SESSION['login'] n'est pas définie alrs l'user est considéré comme déconnecter -->
-    <?php if (!isset($_SESSION['id'])) { ?>
-    <header>
-        <h1 class="titre_index">Livre d'or</h1>
-        <nav>
-            <ul class="liste_nav">
-                <li><a href="../index.php">Accueil</a></li>
-                <li><a href="inscription.php">Inscription</a></li>
-                <li><a href="connexion.php">Connexion</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- 3 : Fin de l'affichage du header  -->
-    <?php } ?>
-    
     <main>
         <div class="main_livreor">
             <div class="form_livreor">
