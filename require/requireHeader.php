@@ -24,6 +24,7 @@
             <h2 class="sous_titre_index">Bienvenue <?= $_SESSION['login'] ?></h2>
             <nav>
                 <ul class="liste_nav">
+                    <li><a href="../index.php">Accueil</a></li>
                     <li><a href="profil.php">Mon profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
                     <li><a href="commentaire.php">Commentaire</a></li>

@@ -1,6 +1,11 @@
     <!-- 2 : Affichage footer en mode 'connecté' -->
     <?php if (isset($_SESSION['id']) && $_SESSION['login'] != 'admin') { ?>
         <footer>
+        <div class="bloc_abso_footer">
+            <div class="sous_bloc_abso">
+                <p class="titre_abso">Bienvenue <i class="effect_footer"><?= $_SESSION['login'] ?></i> ! </p>
+            </div>
+        </div>
             <div class="bloc_footer_nav">
                 <h4 class="titre_footer_nav">Navigation</h4>
                 <ul class="liste_footer_nav">
@@ -29,6 +34,13 @@
     <!-- 3 : Affichage du footer en mode 'déconnecté' -->
     <?php if (!isset($_SESSION['id'])) { ?>
     <footer>
+        <div class="bloc_abso_footer">
+            <div class="sous_bloc_abso">
+                <p class="titre_abso">Envie de nous rejoindre ?</p>
+                <p class="sous_titre_abso">Rien de plus simple</p>
+            </div>
+                <a href="php/inscription.php">S'inscrire</a>
+        </div>
         <div class="bloc_footer_nav">
             <h4 class="titre_footer_nav">Navigation</h4>
             <ul class="liste_footer_nav">

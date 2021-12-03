@@ -1,11 +1,18 @@
- <!-- 2 : Affichage footer en mode 'connecté' -->
- <?php if (isset($_SESSION['id']) && $_SESSION['login'] != 'admin') { ?>
-        <footer>
+<!-- 2 : Affichage footer en mode 'connecté' -->
+<?php if (isset($_SESSION['id']) && $_SESSION['login'] != 'admin') {
+        $display = "co";
+        ?>
+        <footer class="<?= $display ?>_footer">
+        <div class="bloc_abso_footer">
+            <div class="sous_bloc_abso">
+                <p class="titre_abso">Bienvenue <i class="effect_footer"><?= $_SESSION['login'] ?></i> ! </p>
+            </div>
+        </div>
             <div class="bloc_footer_nav">
                 <h4 class="titre_footer_nav">Navigation</h4>
                 <ul class="liste_footer_nav">
-                    <li><a href="index.php">Accueil</a></li>
                     <li><a href="php/profil.php">Mon profil</a></li>
+                    <li><a href="php/livre-or.php">Livre d'or</a></li>
                     <li><a href="php/commentaire.php">Commentaire</a></li>
                     <form method="post" action="require/deconnexion.php">
                         <input type="submit" name="deconnexion" value="Deconnexion">
@@ -27,27 +34,36 @@
     <?php } ?>
 
     <!-- 3 : Affichage du footer en mode 'déconnecté' -->
-    <?php if (!isset($_SESSION['id'])) { ?>
-    <footer>
-        <div class="bloc_footer_nav">
-            <h4 class="titre_footer_nav">Navigation</h4>
-            <ul class="liste_footer_nav">
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="inscription.php">Inscription</a></li>
-                <li><a href="connexion.php">Connexion</a></li>
-            </ul>
-        </div>
-        <div class="bloc_footer_media">
-            <h4 class="titre_footer_media">Réseaux sociaux</h4>
-            <ul class="liste_footer_media">
-                <li><a href="https://www.facebook.com/LaPlateformeIO"><i class="fab fa-facebook-square"></i></a></li>
-                <li><a href="https://github.com/max-machin/livre-or"><i class="fab fa-github-square"></i></a></li>
-                <li><a href="https://twitter.com/LaPlateformeIO"><i class="fab fa-twitter-square"></i></a></li>
-                <li><a href="https://www.instagram.com/laplateformeio/?hl=am-et"><i class="fab fa-instagram-square"></i></a></li>
-                <li><a href="https://www.youtube.com/watch?v=a7_WFUlFS94&ab_channel=Fireship"><i class="fab fa-youtube-square"></i></a></li>
-            </ul>
-        </div>
-    </footer>
+    <?php if (!isset($_SESSION['id'])) {
+        $display = "deco";
+        ?>
+        <footer class="<?= $display ?>_footer">
+            <div class="bloc_abso_footer">
+                <div class="sous_bloc_abso">
+                    <p class="titre_abso">Envie de nous rejoindre ?</p>
+                    <p class="sous_titre_abso">Rien de plus simple</p>
+                </div>
+                <a href="php/inscription.php">S'inscrire</a>
+            </div>
+            <div class="bloc_footer_nav">
+                <h4 class="titre_footer_nav">Navigation</h4>
+                <ul class="liste_footer_nav">
+                    <li><a href="php/inscription.php">Inscription</a></li>
+                    <li><a href="php/livre-or.php">Livre d'or</a></li>
+                    <li><a href="php/connexion.php">Connexion</a></li>
+                </ul>
+            </div>
+            <div class="bloc_footer_media">
+                <h4 class="titre_footer_media">Réseaux sociaux</h4>
+                <ul class="liste_footer_media">
+                    <li><a href="https://www.facebook.com/LaPlateformeIO"><i class="fab fa-facebook-square"></i></a></li>
+                    <li><a href="https://github.com/max-machin/livre-or"><i class="fab fa-github-square"></i></a></li>
+                    <li><a href="https://twitter.com/LaPlateformeIO"><i class="fab fa-twitter-square"></i></a></li>
+                    <li><a href="https://www.instagram.com/laplateformeio/?hl=am-et"><i class="fab fa-instagram-square"></i></a></li>
+                    <li><a href="https://www.youtube.com/watch?v=a7_WFUlFS94&ab_channel=Fireship"><i class="fab fa-youtube-square"></i></a></li>
+                </ul>
+            </div>
+        </footer>
     <!-- 3 : Fin de l'affichage du footer en mode 'déconnecté' -->
     <?php } ?>
 </body>

@@ -292,6 +292,10 @@ footer {
     color: #F2AA4CFF;
 }
 
+.effect_footer {
+    color: black;
+}
+
 /*----------------------Début du style de la page 'inscription'---------------------------*/
 
 .contenu_inscription {
