@@ -170,16 +170,18 @@ $echo3 = "";
             <hr>
             <?php
                 $req_com = mysqli_query($conn,"SELECT id,commentaire, DATE_FORMAT(date, '%d/%m/%Y') AS 'datefr' , DATE_FORMAT(date, '%H:%i:%s') AS 'heurefr' FROM commentaires WHERE id_utilisateur = '$_SESSION[id]'");
-                $res_com = mysqli_fetch_all($req_com, MYSQLI_ASSOC);
-                
-                foreach($req_com as $res){
+                while($res_com = mysqli_fetch_array($req_com, MYSQLI_ASSOC)){
+                    if (isset($_POST['supp_comm']) && $res_com['id'] == $_POST['id']){
+                        $id = $_POST['id'];
+                        $delete = mysqli_query($conn , "DELETE FROM commentaires WHERE id = '$id'");
+                    }
             ?>
             <div class="bloc_profil">
-                <p class="date_comm_profil">Posté le <?= $res['datefr'] ?> à <?= $res['heurefr'] ?> </p>
-                <p class="comm_profil"> <?= nl2br($res['commentaire']) ?> </p>
-               
-                <form method="post" action="">
-                    <input type="submit" name="supp_comm" value="Supprimer">
+            <form method="post" action="">
+                <p class="date_comm_profil">Posté le <?= $res_com['datefr'] ?> à <?= $res_com['heurefr'] ?> </p>
+                <p class="comm_profil"> <?= nl2br($res_com['commentaire']) ?> </p>
+                <input type="submit" name="supp_comm" value="Supprimer">
+                <input type="hidden" name="id" value="<?= $res_com['id'] ?>">
                 </form>
             </div>
             
