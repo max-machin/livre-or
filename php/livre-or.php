@@ -8,6 +8,8 @@ require "../require/require_bdd.php";
 $requete_affichage_comm1 = mysqli_query ( $conn , "SELECT login,commentaire, DATE_FORMAT(date, '%d/%m/%Y') AS 'datefr' , DATE_FORMAT(date, '%H:%i:%s') AS 'heurefr' FROM `commentaires` INNER JOIN `utilisateurs` ON commentaires.id_utilisateur = utilisateurs.id ORDER BY `date` DESC");
 $result_affichage = mysqli_fetch_all($requete_affichage_comm1, MYSQLI_ASSOC);
 
+$requete_notes = mysqli_query($conn, "SELECT AVG(note) FROM notes ");
+$result_notes = mysqli_fetch_all($requete_notes);
 require "../require/requireHeader.php";
 
 ?>
@@ -19,6 +21,12 @@ require "../require/requireHeader.php";
                     <input type="submit" name="desc" value="Nouveaux">
                     <input type="submit" name="asc" value="Anciens">
                 </form>
+                <div class="sous_livreor">
+                    <p class="notes_livreor">La note des utilisateurs</p>
+                    <progress class="progress" max="10" value="<?= $result_notes[0][0] ?>"><?= $result_notes[0][0] ?></progress>
+                    <br>
+                    <?= round($result_notes[0][0],1) ?>
+                </div>
             </div>
             <div class="comm_livreor">
                 <h3 class="titre_livreor">Les commentaires des utilisateurs</h3>
