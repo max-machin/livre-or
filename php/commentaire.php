@@ -94,7 +94,7 @@ require "../require/requireHeader.php";
             </form>
             <form action="" method="post"  style="display: <?= $display1 ?>">
             <label for="note"> Laissez nous un avis! <br></label>
-            <select name="avis" value="Notez sur/">
+            <select class="select" name="avis" value="Notez sur/">
                 <option selected value="0">Notez sur/10</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -117,11 +117,11 @@ require "../require/requireHeader.php";
             <p class="note_user">Votre note</p>
             <progress class="progress" max="10" value="<?= $result_notes[0][0] ?>"><?= $result_notes[0][0] ?></progress>
                     <br>
-                <?= round($result_notes[0][0],1) ?>
+                    <a class="note_users"> <?= round($result_notes[0][0],1) ?> </a>
             <form action="" method="post">
             <label for="note"> Modifiez votre note <br></label>
-            <select name="modif" value="Notez sur/">
-                <option selected value="0">Modifez votre note</option>
+            <select class="select" name="modif" value="Notez sur/">
+                <option selected value="0">Modifiez/10</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -135,7 +135,7 @@ require "../require/requireHeader.php";
             </select><br>
             <a class="erreur"> <?= $error2 ?> </a><br>
             <a class="echo"> <?= $echo2 ?> </a><br>
-            <input type="submit" name="sub_modif" value="Modifier">
+            <input class="sub_modif" type="submit" name="sub_modif" value="Modifier">
             </form>
             </div>
         </div> 

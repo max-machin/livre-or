@@ -25,7 +25,7 @@ require "../require/requireHeader.php";
                     <p class="notes_livreor">La note des utilisateurs</p>
                     <progress class="progress" max="10" value="<?= $result_notes[0][0] ?>"><?= $result_notes[0][0] ?></progress>
                     <br>
-                    <a class="note_user"> <?= round($result_notes[0][0],1) ?> </a>
+                    <a class="note_users"> <?= round($result_notes[0][0],1) ?> </a>
                 </div>
             </div>
             <div class="comm_livreor">

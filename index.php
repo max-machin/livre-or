@@ -5,6 +5,8 @@ session_start();
 require "require/require_bdd.php";
 
 $display ="";
+$requete_notes = mysqli_query($conn, "SELECT AVG(note) FROM notes ");
+$result_notes = mysqli_fetch_all($requete_notes);
 ?>
 
 <!DOCTYPE html>
@@ -66,6 +68,12 @@ $display ="";
                 <p class="sous_titre_contenu_index">Une fois inscrit sur notre site, vous pourrez nous laisser un commentaire    
                 </br> dans le <a class="href_livre" href="php/livre-or.php"> livre d'or</a>.
                 </p>
+                <div class="sous_livreor">
+                    <p class="notes_livreor">La note des utilisateurs</p>
+                    <progress class="progress" max="10" value="<?= $result_notes[0][0] ?>"><?= $result_notes[0][0] ?></progress>
+                    <br>
+                    <a class="note_users"> <?= round($result_notes[0][0],1) ?> </a>
+                </div>
             </div>
 
             <div class="cont_comm">
