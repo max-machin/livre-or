@@ -66,6 +66,13 @@ nav {
       
   }
 
+.selec_comm {
+    font-family: "Oxygen";
+    font-size: 5vh;
+    text-align: center;
+    color: #F2AA4CFF;
+}
+
 .contenu_index {
     display: flex;
     justify-content: space-around;
@@ -727,13 +734,13 @@ label:hover{
 
 progress {
     -webkit-appearance: none;
-    
+    color: #F2AA4CFF;
     width: 30vh;
     height: 3vh;
     background-color: #eee;
     border-radius: 2px;
     margin-bottom: 3vh;
-    
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.363) inset,1px 2px 5px 2px rgba(94, 94, 94, 0.438)
 }
 
 progress[value]::-webkit-progress-bar{
@@ -745,12 +752,12 @@ progress[value]::-webkit-progress-bar{
 progress[value]::-webkit-progress-value {
     background-image:
          -webkit-linear-gradient(-45deg, 
-                                 transparent 33%, rgba(0, 0, 0, .1) 33%, 
-                                 rgba(0,0, 0, .1) 66%, transparent 66%),
+                                 transparent 33%, rgba(0, 0, 0, 0.3) 33%, 
+                                 rgba(0,0, 0, .3) 66%, transparent 66%),
          -webkit-linear-gradient(top, 
                                  rgba(255, 255, 255, 0.315), 
                                  rgba(0, 0, 0, .25)),
-         -webkit-linear-gradient(left, rgb(87, 87, 87), rgb(255, 145, 0));
+         -webkit-linear-gradient(left, rgb(49, 49, 49), rgb(255, 145, 0));
   
       border-radius: 2px; 
       background-size: 35px 20px, 100% 100%, 100% 100%;
@@ -771,4 +778,106 @@ progress[value]::-webkit-progress-value {
     border: none;
     background-color: gray;
     color: white;
+}
+
+@media (max-width:376px){
+    html {
+        width: 100%;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        width: 100%;
+    }
+    nav {
+        background-color: black;
+    }
+    ul.liste_nav {
+        width: 90%;
+        gap: 0;
+        text-align: center;
+        background-color: #101820FF;
+    }
+    .liste_nav li {
+        padding-left: 0;
+    }
+
+    .liste_nav a {
+        font-size: 13px;
+        border: none;
+    }
+    .titre_index {
+        font-size: 4vh;
+    }
+    .sous_titre_index {
+        font-size: 3vh;
+    }
+    .contenu_index {
+        display: inline-block;
+    }
+    .sous_contenu_index {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .sous_livreor {
+        margin-left: 10%;
+        margin-top: 8vh;
+    }
+
+    .cont_comm {
+        width: 100%;
+    }
+
+    footer {
+        height: 55vh;
+        width: 100%;
+        display: inline-block;
+    }
+
+    .bloc_abso_footer {
+        margin-top: -13%;
+        margin-left: 15%;
+        font-size: 14px;
+        width: 70%;
+        height: 20vh;
+    }
+
+    .titre_abso {
+        font-size: 20px;
+        margin-left: 1vh;
+    }
+    .sous_titre_abso {
+        margin-top: -7%;
+        margin-left: 1vh;
+        font-size: 15px;
+    }
+    .bloc_abso_footer a {
+        width: 26%;
+        border-radius: 4px;
+        padding-top:15px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .bloc_footer_nav {
+        text-align: center;
+        margin-top: 15vh;
+        margin-left: 6%;
+    }
+    .bloc_footer_nav a {
+        font-size: 12px;
+    }
+    .bloc_footer_media {
+        text-align: center;
+    }
+    .titre_footer_media {
+        font-size: 3vh;
+        margin-top: -5vh;
+    }
+    .liste_footer_media {
+        margin-left: 6%;
+    }
 }

@@ -77,6 +77,7 @@ $result_notes = mysqli_fetch_all($requete_notes);
             </div>
 
             <div class="cont_comm">
+                <h3 class="selec_comm">Sélection commentaires</h3>
                 <?php
                     $comm = 4;
 
